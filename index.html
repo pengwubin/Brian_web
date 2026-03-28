@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>永爱婚庆 - 新化农村婚礼布置专家 | 一站式婚礼服务</title>
+    <!-- 使用现代字体提升质感 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (免费图标库) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Swiper 轮播图库 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fef7f0;
+            color: #3e2a2a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* ========= 全新头部导航区：公司名称 + Logo + 联系方式/地址 ========= */
+        .main-header {
+            background: #2d241c;
+            color: #f7e6d9;
+            padding: 0.8rem 1.8rem;
+            border-bottom: 2px solid #e89f6e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        /* Logo + 公司名称区域 */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #e89f6e 0%, #c1652c 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .logo-circle i {
+            font-size: 28px;
+            color: white;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+            color: #e89f6e;
+            line-height: 1.2;
+        }
+        .brand-sub {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #f7e6d9;
+            opacity: 0.8;
+        }
+        /* 右侧联系信息 */
+        .header-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        .header-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-contact-item i {
+            color: #e89f6e;
+            font-size: 1.1rem;
+        }
+        .header-contact-item span {
+            color: #f7e6d9;
+        }
+        .header-phone {
+            background: rgba(232, 159, 110, 0.2);
+            padding: 5px 12px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        @media (max-width: 800px) {
+            .header-container {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .brand {
+                justify-content: center;
+            }
+            .header-contact {
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 550px) {
+            .header-contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.6rem;
+            }
+            .brand-name {
+                font-size: 1.4rem;
+            }
+            .logo-circle {
+                width: 40px;
+                height: 40px;
+            }
+            .logo-circle i {
+                font-size: 22px;
+            }
+        }
+
+        /* 轮播区域 Swiper */
+        .hero-swiper {
+            width: 100%;
+            height: 85vh;
+            min-height: 500px;
+            position: relative;
+        }
+        .swiper-slide {
+            position: relative;
+            background-size: cover;
+            background-position: center 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .swiper-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            padding: 2rem;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+        .hero-content h1 {
+            font-size: 3.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #e89f6e;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            background-color: #d47a45;
+            transform: translateY(-2px);
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #e89f6e;
+            background: rgba(0,0,0,0.3);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+        }
+        .swiper-pagination-bullet-active {
+            background: #e89f6e;
+        }
+
+        /* 通用容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* 公司介绍区域 */
+        .about-section {
+            background: linear-gradient(135deg, #fff9f2 0%, #ffece0 100%);
+            position: relative;
+        }
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1.2;
+        }
+        .about-text h2 {
+            font-size: 2.3rem;
+            color: #b45f3b;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: #e89f6e;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #4a3b2c;
+        }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,240,0.7);
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #c1652c;
+        }
+        .about-image {
+            flex: 0.9;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.4s;
+        }
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* 业务服务区域 */
+        .services {
+            background: #fffaf5;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            color: #b45f3b;
+            font-weight: 700;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #ffe0cc;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
+            border-color: #e9b184;
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #e89f6e;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .service-card p {
+            color: #6b4e3a;
+            font-size: 0.95rem;
+        }
+
+        /* 口号区域 */
+        .slogan-section {
+            background: url('https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1200') center center/cover fixed;
+            position: relative;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+        .slogan-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .slogan-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .slogan-content h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+        .slogan-content p {
+            font-size: 1.4rem;
+            font-style: italic;
+            font-weight: 400;
+            border-top: 2px solid #e89f6e;
+            display: inline-block;
+            padding-top: 0.8rem;
+        }
+
+        /* 底部地址电话 */
+        .footer-info {
+            background: #2d241c;
+            color: #f7e6d9;
+            padding: 2rem 1rem;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .address-box, .phone-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+        }
+        .address-box i, .phone-box i {
+            font-size: 1.8rem;
+            color: #e89f6e;
+        }
+        .copyright {
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+            opacity: 0.7;
+        }
+        .btn-contact {
+            background: #e89f6e;
+            color: #2d241c;
+            border-radius: 40px;
+            padding: 8px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-contact:hover {
+            background: #f5b484;
+        }
+
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .about-grid {
+                flex-direction: column;
+            }
+            .slogan-content h3 {
+                font-size: 1.8rem;
+            }
+            .slogan-content p {
+                font-size: 1.1rem;
+            }
+            .hero-swiper {
+                height: 70vh;
+            }
+        }
+        /* 右下角地址电话在桌面端靠右对齐 */
+        @media (min-width: 1024px) {
+            .footer-container {
+                justify-content: flex-end;
+                gap: 2.5rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .footer-container {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+            .copyright {
+                text-align: right;
+                margin-top: 1rem;
+            }
+        }
+        @media (max-width: 767px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .copyright {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 全新头部：公司名称 + Logo + 联系方式/地址 -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="brand">
+            <div class="logo-circle">
+                <i class="fas fa-heart"></i>
+            </div>
+            <div class="brand-text">
+                <div class="brand-name">永爱婚庆</div>
+                <div class="brand-sub">YONG AI WEDDING</div>
+            </div>
+        </div>
+        <div class="header-contact">
+            <div class="header-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>新化县上渡街道</span>
+            </div>
+            <div class="header-contact-item header-phone">
+                <i class="fas fa-phone-alt"></i>
+                <span>138-8888-8888</span>
+            </div>
+            <div class="header-contact-item">
+                <i class="fas fa-clock"></i>
+                <span>9:00-21:00</span>
+            </div>
+            <div class="header-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>yongai@wedding.com</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- 轮播图区域：5张高质量婚礼/农村布置图片 -->
+<div class="hero-swiper swiper">
+    <div class="swiper-wrapper">
+        <!-- 幻灯片1: 乡村婚礼田野布置 -->
+        <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/3014857/pexels-photo-3014857.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 40%;">
+            <div class="hero-content">
+                <h1>永爱婚庆 · 乡恋永恒</h1>
+                <p>专注农村婚礼布置 | 一站式全程服务 | 让爱回归田野的浪漫</p>
+                <a href="#services" class="btn">查看婚礼服务 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+        <!-- 幻灯片2: 户外婚礼鲜花布置 + 农村特色 -->
+        <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 35%;">
+            <div class="hero-content">
+                <h1>田园风光 · 浪漫满院</h1>
+                <p>十年专注新化本土婚俗，超1000场实战经验，为您呈现梦想中的婚礼</p>
+                <a href="#about" class="btn">了解更多故事 <i class="fas fa-heart"></i></a>
+            </div>
+        </div>
+        <!-- 幻灯片3: 中式婚礼细节 红红火火 农村礼堂布置 -->
+        <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/12964079/pexels-photo-12964079.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 50%;">
+            <div class="hero-content">
+                <h1>传统韵味 · 新式格调</h1>
+                <p>从场地布景到司仪主持，每一环节皆由专业团队精心打磨</p>
+                <a href="#services" class="btn">全套服务一览 <i class="fas fa-gem"></i></a>
+            </div>
+        </div>
+        <!-- 幻灯片4: 乡村自然风光+温馨晚宴风格 -->
+        <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 30%;">
+            <div class="hero-content">
+                <h1>爱与乡愁 · 独家定制</h1>
+                <p>摄影师+摄像师全程记录，定格永恒瞬间，留存珍贵回忆</p>
+                <a href="#services" class="btn">即刻预约档期</a>
+            </div>
+        </div>
+        <!-- 幻灯片5: 浪漫花瓣与乡村院落 -->
+        <div class="swiper-slide" style="background-image: url('https://images.pexels.com/photos/1279590/pexels-photo-1279590.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-position: center 45%;">
+            <div class="hero-content">
+                <h1>永爱相伴 · 一生珍藏</h1>
+                <p>十年品质，千场婚礼见证，只为打造您的专属高光时刻</p>
+                <a href="#contactInfo" class="btn">联系我们</a>
+            </div>
+        </div>
+    </div>
+    <!-- 导航箭头和分页器 -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- 公司介绍部分: 近10年经验 超1000场 -->
+<section class="about-section" id="about">
+    <div class="container about-grid">
+        <div class="about-text">
+            <h2>关于永爱婚庆</h2>
+            <p>永爱婚庆扎根于湖南新化县，专注农村婚礼策划与场地布置近十年。我们深谙本地婚俗文化，将传统韵味与现代美学融合，为新化及周边乡镇的新人打造专属浪漫婚礼。</p>
+            <p><strong>从2015年至今，策划并执行婚礼场次超过1000场，</strong> 其中乡村户外婚礼、中式复古婚礼、田园风婚礼均是我们擅长的特色。每一场婚礼都由专业团队精心打磨，让每一个细节都流露幸福。</p>
+            <div class="stats">
+                <div class="stat-item"><div class="stat-number">10+</div><div>年专业经验</div></div>
+                <div class="stat-item"><div class="stat-number">1000+</div><div>场婚礼见证</div></div>
+                <div class="stat-item"><div class="stat-number">100%</div><div>用心服务</div></div>
+            </div>
+        </div>
+        <div class="about-image">
+            <!-- 乡村婚礼布置意境图 -->
+            <img src="https://images.pexels.com/photos/3014857/pexels-photo-3014857.jpeg?auto=compress&cs=tinysrgb&w=800" alt="新化乡村婚礼布置实景">
+        </div>
+    </div>
+</section>
+
+<!-- 公司业务全套服务 -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">一站式婚礼服务 · 全方位护航</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-ring"></i></div>
+                <h3>婚礼场地布置</h3>
+                <p>乡村庭院、田野草坪、中式厅堂，专业场景设计，花艺道具定制，打造独一无二婚礼现场。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-microphone-alt"></i></div>
+                <h3>司仪主持</h3>
+                <p>经验丰富的金牌司仪，幽默温情调动全场氛围，让婚礼流程顺畅又感人。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-palette"></i></div>
+                <h3>化妆师 & 跟妆师</h3>
+                <p>资深新娘跟妆团队，提供试妆、全天候补妆，根据乡村气候定制持久妆容，时刻完美。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-camera"></i></div>
+                <h3>专业摄影师</h3>
+                <p>纪实+艺术风格，捕捉每一个真情瞬间，提供精修照片及婚礼相册，珍藏一生回忆。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-video"></i></div>
+                <h3>专业摄像师</h3>
+                <p>4K高清摄像+后期剪辑，微电影式记录婚礼全程，记录珍贵誓言与亲友祝福。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>统筹策划</h3>
+                <p>从婚礼筹备到仪式执行，管家式服务，把控细节，让你轻松享受完美婚礼。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 公司宣传口号区域 体现专业与服务 -->
+<section class="slogan-section">
+    <div class="slogan-content">
+        <h3>永爱婚庆 · 爱在乡野，不负所托</h3>
+        <p>“十年匠心·千场见证，用专业守护您的独家浪漫”</p>
+        <div style="margin-top: 1.5rem;">
+            <a href="#contactInfo" class="btn" style="background:#e89f6e; color:#2d241c;">即刻咨询，定制幸福</a>
+        </div>
+    </div>
+</section>
+
+<!-- 底部地址电话 右下角风格展示 -->
+<footer class="footer-info" id="contactInfo">
+    <div class="footer-container">
+        <div class="address-box">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>湖南省娄底市新化县上渡街道</span>
+        </div>
+        <div class="phone-box">
+            <i class="fas fa-phone-alt"></i>
+            <span>联系电话：138-8888-8888</span>
+        </div>
+        <div>
+            <a href="tel:13888888888" class="btn-contact"><i class="fas fa-comment-dots"></i> 一键联系</a>
+        </div>
+    </div>
+    <div class="copyright">
+        © 2025 永爱婚庆 | 专注新化农村婚礼近十年，用心圆梦每一对新人 | 门店地址：新化县上渡街道
+    </div>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    // 初始化轮播图，自动播放，循环，平滑过渡
+    const swiper = new Swiper('.hero-swiper', {
+        loop: true,
+        autoplay: {
+            delay: 4500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+        speed: 800,
+        effect: 'slide',
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: true,
+        },
+    });
+</script>
+</body>
+</html>
