@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>永爱婚庆 - 新化农村婚礼布置专家 | 一站式婚礼服务</title>
     <!-- 使用现代字体提升质感 -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
@@ -25,11 +25,11 @@
             scroll-behavior: smooth;
         }
 
-        /* ========= 全新头部导航区：公司名称 + Logo + 联系方式/地址 ========= */
+        /* ========= 全新头部导航区：仅保留 Logo + 公司名称 + 联系电话 (移动端优先) ========= */
         .main-header {
             background: #2d241c;
             color: #f7e6d9;
-            padding: 0.8rem 1.8rem;
+            padding: 0.7rem 1.2rem;
             border-bottom: 2px solid #e89f6e;
             position: sticky;
             top: 0;
@@ -40,20 +40,21 @@
             max-width: 1400px;
             margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
+            flex-wrap: nowrap;
         }
         /* Logo + 公司名称区域 */
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
         }
         .logo-circle {
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             background: linear-gradient(135deg, #e89f6e 0%, #c1652c 100%);
             border-radius: 50%;
             display: flex;
@@ -62,7 +63,7 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .logo-circle i {
-            font-size: 28px;
+            font-size: 24px;
             color: white;
             filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
         }
@@ -71,7 +72,7 @@
             flex-direction: column;
         }
         .brand-name {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 800;
             font-family: 'Playfair Display', serif;
             letter-spacing: 1px;
@@ -79,66 +80,46 @@
             line-height: 1.2;
         }
         .brand-sub {
-            font-size: 0.7rem;
-            letter-spacing: 2px;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
             color: #f7e6d9;
             opacity: 0.8;
+            display: none; /* 移动端隐藏副标题，更简洁 */
         }
-        /* 右侧联系信息 */
-        .header-contact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        .header-contact-item {
+        /* 右侧仅联系电话 */
+        .header-phone-only {
+            background: rgba(232, 159, 110, 0.2);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
-        .header-contact-item i {
+        .header-phone-only i {
             color: #e89f6e;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
-        .header-contact-item span {
+        .header-phone-only span {
             color: #f7e6d9;
         }
-        .header-phone {
-            background: rgba(232, 159, 110, 0.2);
-            padding: 5px 12px;
-            border-radius: 40px;
-            font-weight: 600;
-        }
-        @media (max-width: 800px) {
-            .header-container {
-                flex-direction: column;
-                align-items: stretch;
-                text-align: center;
-            }
-            .brand {
-                justify-content: center;
-            }
-            .header-contact {
-                justify-content: center;
-                gap: 1rem;
-            }
-        }
-        @media (max-width: 550px) {
-            .header-contact {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.6rem;
-            }
+        /* 桌面端稍微调整，但依然保持精简（不显示多余信息） */
+        @media (min-width: 769px) {
             .brand-name {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
             .logo-circle {
-                width: 40px;
-                height: 40px;
+                width: 48px;
+                height: 48px;
             }
             .logo-circle i {
-                font-size: 22px;
+                font-size: 28px;
+            }
+            .header-phone-only {
+                font-size: 1rem;
+                padding: 8px 18px;
             }
         }
 
@@ -177,22 +158,22 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
         .hero-content h1 {
-            font-size: 3.6rem;
+            font-size: 2.8rem;
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 1rem;
             font-family: 'Playfair Display', serif;
         }
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
             font-weight: 400;
         }
         .btn {
             display: inline-block;
             background-color: #e89f6e;
             color: white;
-            padding: 12px 32px;
+            padding: 10px 28px;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
@@ -200,6 +181,7 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            font-size: 0.95rem;
         }
         .btn:hover {
             background-color: #d47a45;
@@ -208,8 +190,8 @@
         .swiper-button-next, .swiper-button-prev {
             color: #e89f6e;
             background: rgba(0,0,0,0.3);
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
         }
         .swiper-pagination-bullet-active {
@@ -220,7 +202,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.2rem;
         }
 
         /* 公司介绍区域 */
@@ -231,16 +213,16 @@
         .about-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 2rem;
             align-items: center;
         }
         .about-text {
             flex: 1.2;
         }
         .about-text h2 {
-            font-size: 2.3rem;
+            font-size: 1.9rem;
             color: #b45f3b;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             position: relative;
             display: inline-block;
         }
@@ -249,29 +231,29 @@
             position: absolute;
             bottom: -8px;
             left: 0;
-            width: 70px;
+            width: 60px;
             height: 3px;
             background: #e89f6e;
         }
         .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 0.9rem;
             color: #4a3b2c;
         }
         .stats {
             display: flex;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 1.2rem;
+            margin-top: 1.2rem;
             flex-wrap: wrap;
         }
         .stat-item {
             text-align: center;
             background: rgba(255,255,240,0.7);
-            padding: 0.8rem 1.2rem;
+            padding: 0.5rem 1rem;
             border-radius: 30px;
         }
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #c1652c;
         }
@@ -297,49 +279,49 @@
         }
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.9rem;
+            margin-bottom: 2rem;
             color: #b45f3b;
             font-weight: 700;
         }
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
         .service-card {
             background: white;
-            border-radius: 28px;
-            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            padding: 1.6rem 1.2rem;
             text-align: center;
             transition: all 0.25s ease;
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
             border: 1px solid #ffe0cc;
         }
         .service-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             box-shadow: 0 20px 30px -12px rgba(0,0,0,0.15);
             border-color: #e9b184;
         }
         .service-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: #e89f6e;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
         }
         .service-card p {
             color: #6b4e3a;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* 口号区域 */
         .slogan-section {
             background: url('https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1200') center center/cover fixed;
             position: relative;
-            padding: 4rem 2rem;
+            padding: 3rem 1.5rem;
             text-align: center;
             color: white;
         }
@@ -360,26 +342,26 @@
             margin: 0 auto;
         }
         .slogan-content h3 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             letter-spacing: 1px;
             font-family: 'Playfair Display', serif;
         }
         .slogan-content p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-style: italic;
             font-weight: 400;
             border-top: 2px solid #e89f6e;
             display: inline-block;
-            padding-top: 0.8rem;
+            padding-top: 0.6rem;
         }
 
         /* 底部地址电话 */
         .footer-info {
             background: #2d241c;
             color: #f7e6d9;
-            padding: 2rem 1rem;
+            padding: 1.8rem 1rem;
         }
         .footer-container {
             max-width: 1200px;
@@ -388,89 +370,108 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         .address-box, .phone-box {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 1.1rem;
+            gap: 10px;
+            font-size: 0.95rem;
         }
         .address-box i, .phone-box i {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             color: #e89f6e;
         }
         .copyright {
             text-align: center;
-            font-size: 0.85rem;
-            margin-top: 1.5rem;
+            font-size: 0.75rem;
+            margin-top: 1.2rem;
             opacity: 0.7;
         }
         .btn-contact {
             background: #e89f6e;
             color: #2d241c;
             border-radius: 40px;
-            padding: 8px 20px;
+            padding: 6px 16px;
             font-weight: bold;
             text-decoration: none;
             transition: 0.2s;
+            font-size: 0.85rem;
         }
         .btn-contact:hover {
             background: #f5b484;
         }
 
-        @media (max-width: 700px) {
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .hero-swiper {
+                height: 70vh;
+                min-height: 450px;
+            }
             .hero-content h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .hero-content p {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+            }
+            .btn {
+                padding: 8px 22px;
+                font-size: 0.85rem;
+            }
+            .swiper-button-next, .swiper-button-prev {
+                width: 30px;
+                height: 30px;
+            }
+            .swiper-button-next:after, .swiper-button-prev:after {
+                font-size: 1.2rem;
             }
             .about-grid {
                 flex-direction: column;
+                gap: 1.5rem;
+            }
+            .about-text h2 {
+                font-size: 1.7rem;
+            }
+            .stats {
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 1.7rem;
             }
             .slogan-content h3 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .slogan-content p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
-            .hero-swiper {
-                height: 70vh;
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.8rem;
+            }
+            .copyright {
+                text-align: center;
             }
         }
-        /* 右下角地址电话在桌面端靠右对齐 */
-        @media (min-width: 1024px) {
+
+        /* 桌面端右下角地址电话靠右（保持美观） */
+        @media (min-width: 769px) {
             .footer-container {
                 justify-content: flex-end;
-                gap: 2.5rem;
-            }
-        }
-        @media (min-width: 768px) {
-            .footer-container {
-                flex-direction: row;
-                justify-content: flex-end;
+                gap: 2rem;
             }
             .copyright {
                 text-align: right;
                 margin-top: 1rem;
             }
         }
-        @media (max-width: 767px) {
-            .footer-container {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .copyright {
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
 
-<!-- 全新头部：公司名称 + Logo + 联系方式/地址 -->
+<!-- 精简头部：仅 Logo + 公司名称 + 联系电话（移动端友好） -->
 <header class="main-header">
     <div class="header-container">
         <div class="brand">
@@ -482,23 +483,9 @@
                 <div class="brand-sub">YONG AI WEDDING</div>
             </div>
         </div>
-        <div class="header-contact">
-            <div class="header-contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>新化县上渡街道</span>
-            </div>
-            <div class="header-contact-item header-phone">
-                <i class="fas fa-phone-alt"></i>
-                <span>138-8888-8888</span>
-            </div>
-            <div class="header-contact-item">
-                <i class="fas fa-clock"></i>
-                <span>9:00-21:00</span>
-            </div>
-            <div class="header-contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>yongai@wedding.com</span>
-            </div>
+        <div class="header-phone-only">
+            <i class="fas fa-phone-alt"></i>
+            <span>159-7381-9053</span>
         </div>
     </div>
 </header>
@@ -617,7 +604,7 @@
     <div class="slogan-content">
         <h3>永爱婚庆 · 爱在乡野，不负所托</h3>
         <p>“十年匠心·千场见证，用专业守护您的独家浪漫”</p>
-        <div style="margin-top: 1.5rem;">
+        <div style="margin-top: 1.2rem;">
             <a href="#contactInfo" class="btn" style="background:#e89f6e; color:#2d241c;">即刻咨询，定制幸福</a>
         </div>
     </div>
@@ -628,18 +615,18 @@
     <div class="footer-container">
         <div class="address-box">
             <i class="fas fa-map-marker-alt"></i>
-            <span>湖南省娄底市新化县上渡街道</span>
+            <span>湖南省新化县上渡街道新桂府2栋118门面</span>
         </div>
         <div class="phone-box">
             <i class="fas fa-phone-alt"></i>
-            <span>联系电话：138-8888-8888</span>
+            <span>联系电话：159-7381-9053</span>
         </div>
         <div>
-            <a href="tel:13888888888" class="btn-contact"><i class="fas fa-comment-dots"></i> 一键联系</a>
+            <a href="tel:15973819053" class="btn-contact"><i class="fas fa-comment-dots"></i> 一键联系</a>
         </div>
     </div>
     <div class="copyright">
-        © 2025 永爱婚庆 | 专注新化农村婚礼近十年，用心圆梦每一对新人 | 门店地址：新化县上渡街道
+        © 2026 永爱婚庆 | 专注新化农村婚礼近十年，用心圆梦每一对新人 | 门店地址：新化县上渡街道新桂府2栋118门面
     </div>
 </footer>
 
